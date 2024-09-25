@@ -10,10 +10,10 @@ import csv  # Handle CSV file creation and saving
 from PyPDF2 import PdfReader  # Reads and parses the PDF file
 import os
 
-# Configure the Gemini API
+# Configure the Gemini API (if using environment variable. If not, comment this out and use the API key option below)
 genai.configure(api_key=os.environ["API_KEY"])
 
-# Configure the Gemini API
+# Configure the Gemini API 
 #genai.configure(api_key="ENTER_API_KEY")    #---Enter API Key Here---#
 
 model = genai.GenerativeModel('gemini-1.5-flash')
