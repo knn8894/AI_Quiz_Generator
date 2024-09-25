@@ -1,0 +1,4 @@
+- dashboard.html is the updated version from the WebApp directory
+- mcq_to_json is updated to include correct answer explanations exported to csv
+- app.py updated to include additional home page and option to generate test without login
+- don't forget to add API key to 'mcq_to_json'

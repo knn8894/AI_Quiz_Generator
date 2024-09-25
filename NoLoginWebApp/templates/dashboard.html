@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+
+    <h1>Welcome, {{ current_user.username }}</h1>
+	
+	<h2>Your Assigned Tests</h2>
+    {% if assignments %}
+        <ul>
+        {% for assignment in assignments %}
+            <li>
+                Test on {{ assignment.pdf_path.split('/')[-1].split('.')[0] }} -
+                <a href="{{ url_for('take_test', assignment_id=assignment.id) }}">Take Test</a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No tests assigned yet.</p>
+    {% endif %}	
+	
+    <h3>Your Results, {{ current_user.username }}</h3>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul>
+        {% for category, message in messages %}
+          <li class="alert alert-{{ category }}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+	
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

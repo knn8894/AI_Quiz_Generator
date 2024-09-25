@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Test</title>
+</head>
+<body>
+    <h1>Take Test</h1>
+
+    <form method="POST">
+        {% for question in questions %}
+            <div>
+                <p><strong>{{ loop.index }}. {{ question.question }}</strong></p>
+                {% for choice in question.choices %}
+                    <div>
+                        <input type="radio" id="{{ loop.index }}" name="{{ question.question }}" value="{{ choice }}" required>
+                        <label for="{{ loop.index }}">{{ choice }}</label>
+                    </div>
+                {% endfor %}
+            </div>
+            <br>
+        {% endfor %}
+        <button type="submit">Submit Test</button>
+    </form>
+
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+</body>
+</html>

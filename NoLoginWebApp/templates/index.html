@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Upload PDF to Generate Quiz</h1>
+    <form action="{{ url_for('upload_and_generate_quiz') }}" method="POST" enctype="multipart/form-data">
+        <input type="file" name="pdf_file" required>
+        <button type="submit">Upload and Generate Quiz</button>
+    </form>
+    <br>
+    <a href="{{ url_for('login') }}">Login</a>
+    <a href="{{ url_for('register') }}">Register</a>
+</body>
+</html>

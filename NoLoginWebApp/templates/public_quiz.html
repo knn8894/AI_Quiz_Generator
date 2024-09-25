@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Quiz</title>
+</head>
+<body>
+    <h1>Take the Generated Quiz</h1>
+
+    <form method="POST">
+        {% for question in questions %}
+            <div>
+                <p>{{ question.question }}</p>
+                <input type="radio" name="{{ question.question }}" value="{{ question.choices[0] }}"> {{ question.choices[0] }}<br>
+                <input type="radio" name="{{ question.question }}" value="{{ question.choices[1] }}"> {{ question.choices[1] }}<br>
+                <input type="radio" name="{{ question.question }}" value="{{ question.choices[2] }}"> {{ question.choices[2] }}<br>
+                <input type="radio" name="{{ question.question }}" value="{{ question.choices[3] }}"> {{ question.choices[3] }}<br>
+            </div>
+        {% endfor %}
+        <button type="submit">Submit Quiz</button>
+    </form>
+</body>
+</html>

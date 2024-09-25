@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <style>
+        .correct {
+            font-weight: bold;
+            color: green;
+        }
+        .incorrect {
+            font-weight: bold;
+            color: red;
+        }
+        .question {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quiz Results</h1>
+    
+    <p>{{ score }}</p>
+    
+    <div>
+        {% for question in questions %}
+            <div>
+                <p class="question">{{ question.question }}</p>
+                {% for choice in question.choices %}
+                    <p class="{% if choice == question.correct_answer %}correct{% elif choice == question.selected_answer and choice[0] == question.correct_answer[0] %}correct{% elif choice == question.selected_answer %}incorrect{% endif %}">
+                        {{ choice }}
+                    </p>
+                {% endfor %}
+                <p>Correct Answer: <strong class="correct">{{ question.correct_answer }}</strong></p>
+            </div>
+        {% endfor %}
+    </div>
+<a href="{{ url_for('dashboard') }}">Go back to Dashboard</a>
+</body>
+</html>
