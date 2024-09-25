@@ -1,3 +1,10 @@
+'''
+Danielle B.
+This code parses uploded pdfs and feeds the text as a string to Gemini. 
+A set of multiple choice answers are generated and returned.
+Despite the code's name,  it converts that string into csv format, not json.
+'''
+
 import google.generativeai as genai  # Gemini API
 import csv  # Handle CSV file creation and saving
 from PyPDF2 import PdfReader  # Reads and parses the PDF file
