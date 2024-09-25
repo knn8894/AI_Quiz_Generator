@@ -29,7 +29,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd {project-directory-name}
+  cd {project/directory/NoLoginWebApp}
 ```
 
 Install dependencies
