@@ -50,6 +50,14 @@ Run the app.py code
 ```
 
 #### Navigate to 'http://127.0.0.1:5000/' to view the application locally in a browser.
+Upload a pdf document and generate a quiz from the home page.
+
+- OR-
+
+Navigate to 'login' to create a user account.
+Log out of the user account and login to the admin account to assign a generated quiz to a user.
+(Admin account credentials can be modified in the 'app.py' code).
+
 ## API Reference
 
 #### If not using an environment variable, don't forget to set the 'api_key' variable to your Gemini api key.
