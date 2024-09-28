@@ -381,7 +381,7 @@ if __name__ == "__main__":
 
         # Manually create an admin user with plain text password
         if not User.query.filter_by(username='admin').first():
-            admin = User(username='admin', email='admin@example.com', password='garrett', is_admin=True)
+            admin = User(username='admin', email='admin@example.com', password='password', is_admin=True)
             db.session.add(admin)
             db.session.commit()
 
