@@ -55,8 +55,9 @@ Upload a pdf document and generate a quiz from the home page.
 - OR-
 
 Navigate to 'login' to create a user account.
-Log out of the user account and login to the admin account to assign a generated quiz to a user.
-(Admin account credentials can be modified in the 'app.py' code).
+Log out of the user account and login to the default admin account to assign a generated quiz to a user.
+Email: <your-email>@example.com PW: <password>
+(Admin account credentials can be modified in the 'app.py' code line 384).
 
 ## API Reference
 
